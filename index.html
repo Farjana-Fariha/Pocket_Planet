@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Phones Planet</title>
    <link rel="stylesheet" href="style.css">
    
    <!-- Daisyui -->
@@ -24,7 +24,7 @@
       }
    </script>
 </head>
-<body>
+<body class="">
    <header>
       <!-- Menu section -->
       <div class="navbar bg-base-100">
@@ -67,14 +67,28 @@
          </div>
        </div>
    </header>
-   <main>
-
+   <main class="max-w-[1140px] mx-auto">
+      <!-- Project section started -->
+    <section>
+      <div class="container">
+        <!-- Search Bar -->
+        <h2 class="font-bold text-4xl text-center py-4">Search your phone</h2>
+        <div class="flex justify-center">
+          <input id="searchedItem" type="text" placeholder="Type here" class="input input-bordered w-full max-w-md" />
+          <button onclick="search()" class="btn btn-info text-xl">Search</button>
+        </div>
+        <div class="project-container grid grid-cols-1 lg:grid-cols-3 gap-12 py-10">
+          
+        </div>
+      </div>
+    </section>
+      <!-- Project section ended -->
    </main>
    <footer>
 
    </footer>
-
-
+   <!--my js files -->
+   <script src="js/app.js"></script>
 
    <!-- Tailwind -->
    <script src="https://cdn.tailwindcss.com"></script>
