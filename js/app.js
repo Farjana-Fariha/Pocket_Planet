@@ -28,7 +28,7 @@ const displayData = phones =>{
         }</h2>
         <p class="text-center text-xl pb-4">${phone.slug}</p>
         <div class="card-actions">
-          <button class="btn btn-primary font-bold text-lg mx-auto">Show Details</button>
+          <button onclick="showDetailsVBtn('${phone.slug}')" class="btn btn-primary font-bold text-lg mx-auto">Show Details</button>
         </div>
       </div>
     </div>
@@ -52,4 +52,15 @@ const loading = (isLoading) => {
    }else{
       loading.classList.add('hidden');
    }
+}
+// Show details
+const showDetailsVBtn = async (id) => {
+   const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+   const data = await res.json();
+   displayDetails(data)
+}
+// display details
+const displayDetails = (phone) => {
+   show_details.showModal();
+   console.log(phone);
 }

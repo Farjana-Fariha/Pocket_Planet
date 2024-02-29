@@ -93,6 +93,21 @@
         <div class="project-container grid grid-cols-1 lg:grid-cols-3 gap-12 py-10">
 
         </div>
+        <!-- show details modal -->
+        <!-- You can open the modal using ID.showModal() method -->
+        <button class="btn" onclick="show_details.showModal()">open modal</button>
+        <dialog id="show_details" class="modal">
+          <div class="modal-box w-11/12 max-w-5xl">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">Click the button below to close</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
         <!-- Show more button -->
         <div class="flex justify-center">
           <button onclick="" id="show-more-btn" class="btn btn-info text-xl hidden">Show More</button>
