@@ -57,10 +57,25 @@ const loading = (isLoading) => {
 const showDetailsVBtn = async (id) => {
    const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
    const data = await res.json();
-   displayDetails(data)
+   displayDetails(data.data)
 }
+
+
 // display details
 const displayDetails = (phone) => {
    show_details.showModal();
    console.log(phone);
+   const detailsContainer = document.getElementById('details-container');
+   detailsContainer.innerHTML = `
+   <div class="py-6 px-7 bg-neutral-300 flex justify-center items-center rounded-md">
+   <img src="${phone.image}" alt="">
+ </div>
+ <h4 class="text-xl mt-3"><span class="font-bold">Brand:</span><span> ${phone.brand}</span></h4>
+ <h4 class="text-xl"><span class="font-bold">Name:</span><span> ${phone.name}</span></h4>
+ <h4 class="text-2xl"><span class="font-bold">MainFeatures</span></h4>
+ <h4 class="text-xl"><span class="font-bold">Storage:</span><span> ${phone.mainFeatures.storage}</span></h4>
+ <h4 class="text-xl"><span class="font-bold">Display size:</span><span> ${phone.mainFeatures.displaySize}</span></h4>
+ <h4 class="text-xl"><span class="font-bold">Chip set:</span><span> ${phone.mainFeatures.chipSet}</span></h4>
+ <h4 class="text-xl"><span class="font-bold">Memory:</span><span> ${phone.mainFeatures.memory}</span></h4>
+   `;
 }
