@@ -67,7 +67,7 @@ const displayDetails = (phone) => {
    console.log(phone);
    const detailsContainer = document.getElementById('details-container');
    detailsContainer.innerHTML = `
-   <div class="py-6 px-7 bg-neutral-300 flex justify-center items-center rounded-md">
+   <div class="py-6 px-7 shadow-lg flex justify-center items-center rounded-md">
    <img src="${phone.image}" alt="">
  </div>
  <h4 class="text-xl mt-3"><span class="font-bold">Brand:</span><span> ${phone.brand}</span></h4>
